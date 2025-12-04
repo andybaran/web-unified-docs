@@ -1,14 +1,13 @@
 The following password policy adheres to the passphrase policy in IBM RACF by 
 requiring:
 
-- 14 characters.
+- 17 characters.
 - at least one lowercase character.
 - at least one uppercase character.
 - at least one number.
-- at least special character from the set [`!`, `@`, `#`, `$`, `%`, `&`].
-
+- at least special character from the set [`@`, `$`, `#`, `¢`, `!`, `?`, `.`, `:`, `;`, `&`, `<`, `>`, `(`, `)`, `[`, `]`, `{`, `}`, `~`, `*`, `-`, `_`, `|`, `=`].
 ```hcl
-length = 14
+length = 17
 
 rule "charset" {
   charset = "abcdefghijklmnopqrstuvwxyz"
@@ -26,7 +25,7 @@ rule "charset" {
 }
 
 rule "charset" {
-  charset = "!@#$%&"
+  charset = "@$#¢!?.:;&<>()[]{}~*-_|="
   min-chars = 1
 }
 ```
